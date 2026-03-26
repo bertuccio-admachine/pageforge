@@ -251,7 +251,7 @@ Contributions welcome! Some ideas:
 - Component variants
 
 ```bash
-git clone https://github.com/admachine-ai/pageforge
+git clone https://github.com/bertuccio-admachine/pageforge
 cd pageforge
 npm install
 npm run build
@@ -265,4 +265,4 @@ MIT — use it however you want.
 
 ---
 
-**Built by [Ad Machine](https://github.com/admachine-ai)** · Landing pages should take minutes, not weeks.
+**Built by [Ad Machine](https://github.com/bertuccio-admachine)** · Landing pages should take minutes, not weeks.
