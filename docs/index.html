@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valid — Paid Ads, Fully Handled</title>
+  <meta name="description" content="From attribution through ad delivery, Valid fully takes paid ads off your plate. Built by engineers, run by marketers.">
+  
+  <meta property="og:title" content="Valid — Paid Ads, Fully Handled">
+  <meta property="og:description" content="From attribution through ad delivery, Valid fully takes paid ads off your plate. Built by engineers, run by marketers.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✓</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* Reset & Base */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #030712;
+  color: #e5e7eb;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+a { color: #818cf8; text-decoration: none; transition: opacity 0.2s; }
+a:hover { opacity: 0.8; }
+img { max-width: 100%; height: auto; }
+
+/* Container */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* Section */
+.section { padding: 96px 0; }
+.section-header { text-align: center; margin-bottom: 64px; }
+.section-title { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
+.section-subtitle { font-size: 1.125rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* Hero */
+.hero { padding: 120px 0 96px; text-align: center; position: relative; }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, #4f46e522 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border-radius: 100px;
+  background: #4f46e515; border: 1px solid #4f46e530;
+  color: #818cf8; font-size: 0.875rem; font-weight: 500;
+  margin-bottom: 32px;
+}
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800;
+  letter-spacing: -0.03em; line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #e5e7eb 0%, #94a3b8 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-subtitle {
+  font-size: 1.25rem; color: #94a3b8;
+  max-width: 640px; margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.hero-image { margin-top: 64px; border-radius: 16px; border: 1px solid #334155; box-shadow: 0 32px 64px rgba(0,0,0,0.3); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; border-radius: 12px;
+  font-size: 1rem; font-weight: 600;
+  cursor: pointer; border: none;
+  transition: all 0.2s ease;
+}
+.btn-primary {
+  background: #4f46e5; color: #fff;
+  box-shadow: 0 0 20px #4f46e540;
+}
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 30px #4f46e560; opacity: 1; }
+.btn-secondary {
+  background: transparent; color: #e5e7eb;
+  border: 1px solid #334155;
+}
+.btn-secondary:hover { background: #1e293b; border-color: #94a3b8; opacity: 1; }
+
+/* Logos */
+.logos { padding: 48px 0; border-top: 1px solid #334155; border-bottom: 1px solid #334155; }
+.logos-title { text-align: center; font-size: 0.875rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 32px; }
+.logos-grid { display: flex; justify-content: center; align-items: center; gap: 48px; flex-wrap: wrap; }
+.logos-grid span { font-size: 1.125rem; font-weight: 600; color: #94a3b8; opacity: 0.6; transition: opacity 0.2s; }
+.logos-grid span:hover { opacity: 1; }
+
+/* Features */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.feature-card {
+  padding: 32px;
+  border-radius: 16px;
+  background: #1e293b80;
+  border: 1px solid #334155;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: #4f46e550;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+}
+.feature-icon { font-size: 2rem; margin-bottom: 16px; display: block; }
+.feature-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+.feature-desc { color: #94a3b8; line-height: 1.7; }
+
+/* Testimonials */
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.testimonial-card {
+  padding: 32px;
+  border-radius: 16px;
+  background: #1e293b80;
+  border: 1px solid #334155;
+  backdrop-filter: blur(12px);
+}
+.testimonial-quote { font-size: 1.125rem; line-height: 1.8; margin-bottom: 24px; font-style: italic; }
+.testimonial-author { display: flex; align-items: center; gap: 12px; }
+.testimonial-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: #4f46e530; }
+.testimonial-name { font-weight: 600; }
+.testimonial-role { font-size: 0.875rem; color: #94a3b8; }
+
+/* Pricing */
+.pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 900px; margin: 0 auto; }
+.pricing-card {
+  padding: 40px 32px;
+  border-radius: 16px;
+  background: #1e293b80;
+  border: 1px solid #334155;
+  backdrop-filter: blur(12px);
+  display: flex; flex-direction: column;
+  transition: all 0.3s ease;
+}
+.pricing-card:hover { transform: translateY(-4px); }
+.pricing-card.highlighted {
+  border-color: #4f46e5;
+  box-shadow: 0 0 40px #4f46e520;
+  position: relative;
+}
+.pricing-card.highlighted::before {
+  content: 'Popular';
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  padding: 4px 16px; border-radius: 100px;
+  background: #4f46e5; color: #fff;
+  font-size: 0.75rem; font-weight: 600; text-transform: uppercase;
+}
+.pricing-name { font-size: 1.25rem; font-weight: 700; margin-bottom: 8px; }
+.pricing-price { font-size: 3rem; font-weight: 800; letter-spacing: -0.02em; }
+.pricing-period { font-size: 1rem; color: #94a3b8; font-weight: 400; }
+.pricing-desc { color: #94a3b8; margin: 16px 0 24px; }
+.pricing-features { list-style: none; margin-bottom: 32px; flex: 1; }
+.pricing-features li { padding: 8px 0; color: #94a3b8; display: flex; align-items: center; gap: 8px; }
+.pricing-features li::before { content: '✓'; color: #818cf8; font-weight: 700; }
+.pricing-card .btn { width: 100%; justify-content: center; }
+
+/* FAQ */
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #334155; }
+.faq-question {
+  width: 100%; padding: 24px 0;
+  background: none; border: none; color: #e5e7eb;
+  font-size: 1.125rem; font-weight: 600;
+  text-align: left; cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: inherit;
+}
+.faq-question::after { content: '+'; font-size: 1.5rem; color: #94a3b8; transition: transform 0.3s; }
+.faq-item.open .faq-question::after { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-answer p { padding: 0 0 24px; color: #94a3b8; line-height: 1.7; }
+.faq-item.open .faq-answer { max-height: 500px; }
+
+/* CTA Section */
+.cta-section {
+  text-align: center;
+  padding: 96px 0;
+  position: relative;
+}
+.cta-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at center, #4f46e510 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Footer */
+.footer { padding: 64px 0 32px; border-top: 1px solid #334155; }
+.footer-grid { display: grid; grid-template-columns: 2fr repeat(auto-fit, minmax(140px, 1fr)); gap: 48px; margin-bottom: 48px; }
+.footer-brand { font-size: 1.25rem; font-weight: 800; margin-bottom: 8px; }
+.footer-tagline { color: #94a3b8; }
+.footer-col-title { font-weight: 700; margin-bottom: 16px; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.footer-col a { display: block; color: #94a3b8; padding: 6px 0; font-size: 0.9375rem; }
+.footer-col a:hover { color: #e5e7eb; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 32px; border-top: 1px solid #334155; }
+.footer-copyright { color: #94a3b8; font-size: 0.875rem; }
+.footer-social { display: flex; gap: 16px; }
+.footer-social a { color: #94a3b8; font-size: 0.875rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .section-title { font-size: 2rem; }
+  .hero { padding: 80px 0 64px; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .features-grid { grid-template-columns: 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; gap: 16px; text-align: center; }
+}
+</style>
+</head>
+<body>
+  
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badge fade-in">● Backed by Neo, Canaan &amp; top investors</div>
+      <h1 class="hero-title fade-in">Paid ads, fully handled</h1>
+      <p class="hero-subtitle fade-in">From attribution through ad delivery, Valid takes paid ads completely off your plate. Forward-deployed engineers. Data-driven creative. Real-time dashboards. You scale — we run the ads.</p>
+      <div class="hero-buttons fade-in">
+        <a href="https://valid.co/#contact" class="btn btn-primary">Get Started</a>
+        <a href="#testimonials" class="btn btn-secondary">See Case Studies</a>
+      </div>
+      
+    </div>
+  </section>
+  
+  <section class="logos fade-in">
+    <div class="container">
+      <div class="logos-title">Built by engineers &amp; marketers from</div>
+      <div class="logos-grid">
+        <span>Google</span>
+        <span>Meta</span>
+        <span>Amazon</span>
+        <span>Stripe</span>
+        <span>HubSpot</span>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">An end-to-end approach</h2>
+        <p class="section-subtitle">Stop managing agencies. Stop guessing at attribution. Start scaling.</p>
+      </div>
+      <div class="features-grid" style="grid-template-columns: repeat(3, 1fr)">
+        
+        <div class="feature-card fade-in">
+          <span class="feature-icon">📊</span>
+          <h3 class="feature-title">Attribution Made Easy</h3>
+          <p class="feature-desc">We are the attribution experts. Our forward-deployed engineers ensure your metrics are set up and data is flowing properly.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <span class="feature-icon">🎯</span>
+          <h3 class="feature-title">Media Buying on All Platforms</h3>
+          <p class="feature-desc">We relentlessly identify the best platforms for you. Maximum precision — no cut-off text, no funky aspect ratios.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <span class="feature-icon">🎨</span>
+          <h3 class="feature-title">Data-Driven Creative</h3>
+          <p class="feature-desc">Our design team produces captivating creative that only expert humans can. We mine performance data to capture what works and cut what doesn't.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <span class="feature-icon">📈</span>
+          <h3 class="feature-title">Learn What's Working</h3>
+          <p class="feature-desc">View performance in real time, any time. A custom dashboard tailored to your needs — no waiting for a weekly call.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <span class="feature-icon">🚀</span>
+          <h3 class="feature-title">Add New Channels &amp; Optimize</h3>
+          <p class="feature-desc">As soon as ads are live and converting, Valid starts adding new channels, targeting, formats, and more so you can keep scaling.</p>
+        </div>
+        <div class="feature-card fade-in">
+          <span class="feature-icon">🔧</span>
+          <h3 class="feature-title">Forward-Deployed Engineers</h3>
+          <p class="feature-desc">Not account managers reading scripts. Engineers who understand your stack, your data, and your growth goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="section" id="testimonials">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">What our partners say</h2>
+      </div>
+      <div class="testimonials-grid">
+        
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-quote">"Valid executes ad campaigns with the precision of a founding team and the analytical rigor of engineers."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"></div>
+            <div>
+              <div class="testimonial-name">Partner Company</div>
+              <div class="testimonial-role">Growth Lead</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-quote">"We stopped managing our agency and started scaling. Valid handles everything from attribution setup to creative optimization."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"></div>
+            <div>
+              <div class="testimonial-name">DTC Brand Founder</div>
+              <div class="testimonial-role">Series A Startup</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-quote">"The real-time dashboard alone saved us 10 hours a week. No more waiting for weekly reports to know what's working."</p>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar"></div>
+            <div>
+              <div class="testimonial-name">Head of Marketing</div>
+              <div class="testimonial-role">E-commerce Brand</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="section-header fade-in">
+        <h2 class="section-title">Frequently asked questions</h2>
+      </div>
+      <div class="faq-list">
+        
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How is Valid different from a traditional agency?</button>
+          <div class="faq-answer"><p>We're built by engineers, not account managers. Our team forward-deploys into your stack to ensure attribution is airtight, creative is data-driven, and every dollar is optimized — not just managed.</p></div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What platforms do you run ads on?</button>
+          <div class="faq-answer"><p>All of them. Meta, Google, TikTok, X, LinkedIn, Pinterest, Snapchat, programmatic — we identify the best channels for your business and expand as you scale.</p></div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">How fast can we get started?</button>
+          <div class="faq-answer"><p>Most brands are live within 2 weeks. We handle attribution setup, creative production, and campaign launch — you just approve and watch the dashboard.</p></div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">Do you handle creative production?</button>
+          <div class="faq-answer"><p>Yes. Our design team produces high-converting ad creative informed by performance data. We continuously test and iterate — no stale creative.</p></div>
+        </div>
+        <div class="faq-item fade-in">
+          <button class="faq-question" onclick="this.parentElement.classList.toggle('open')">What kind of companies do you work with?</button>
+          <div class="faq-answer"><p>DTC brands, SaaS companies, and startups backed by top investors. If you're spending $10K+/month on ads (or want to), we're a fit.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section class="cta-section">
+    <div class="container">
+      <h2 class="section-title fade-in">Ready to stop managing ads?</h2>
+      <p class="section-subtitle fade-in" style="margin-bottom: 40px">Let Valid take paid acquisition off your plate — so you can focus on building your product.</p>
+      <div class="fade-in"><a href="https://valid.co/#contact" class="btn btn-primary">Talk to Us</a></div>
+    </div>
+  </section>
+  
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Valid</div>
+          <div class="footer-tagline">Paid ads, fully handled.</div>
+        </div>
+        
+        <div class="footer-col">
+          <div class="footer-col-title">Company</div>
+          <a href="https://valid.co/about">About</a>
+          <a href="https://valid.co/cases">Case Studies</a>
+          <a href="https://valid.co/careers">Careers</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Services</div>
+          <a href="#features">Attribution</a>
+          <a href="#features">Media Buying</a>
+          <a href="#features">Creative</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Legal</div>
+          <a href="https://valid.co/privacy">Privacy</a>
+          <a href="https://valid.co/terms">Terms</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Valid. All rights reserved.</div>
+        
+        <div class="footer-social">
+          <a href="https://twitter.com/validco">Twitter</a>
+          <a href="https://linkedin.com/company/valid">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
